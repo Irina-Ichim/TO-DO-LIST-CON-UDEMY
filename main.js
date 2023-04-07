@@ -33,3 +33,12 @@ window.onload = () => {
 
 //Eliminar CON SPLICE_ se utiliza para los array y le indicamos de donde hasta donde queremos eliminar elementos de nuestro arreglo
 //arr.(splice 0, 1) siendo el 0 el primer elemnto de nuestro array y 1 cuantos elementos quiero eliminar)
+
+
+//Querry SelectorAll_instruccion para ir a buscar elementos dentro de mi listado y agregarles una funcion que se ejecuta cuando le hago click a uno de estos elementos
+//Te permite buscar por clase, por id, por etiqueta que tengas en html poniendo(#elemento que quieres agregar)
+
+document.querySelectorAll('#todo-list');
+const elementos = document.querySelectorAll('#todo-list li') //llamo a los elementos li
+//Si quieres llamar a los elementos de un array tambien puedes utilizar Array.from(elemetos)
+elementos.forEach( x=> console.log(x))
