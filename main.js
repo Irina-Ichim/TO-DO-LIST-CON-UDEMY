@@ -30,3 +30,6 @@ window.onload = () => {
 //Transforma el elemento dentro de lo que nosotros devolvemos
 
 //.JOIN lo que hace es agregar mas elementos a mi lista de ul del html
+
+//Eliminar CON SPLICE_ se utiliza para los array y le indicamos de donde hasta donde queremos eliminar elementos de nuestro arreglo
+//arr.(splice 0, 1) siendo el 0 el primer elemnto de nuestro array y 1 cuantos elementos quiero eliminar)
