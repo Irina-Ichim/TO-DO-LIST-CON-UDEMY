@@ -12,9 +12,9 @@ form.onsubmit = (e) => {  // reemplazamos con onsubmit
  //todos.push(todoText); //agrego elementos a un array
  //const todoList = document.getElementById('todo-list');
  //todoList.innerHTML = '';
- for(let i = 0; i < todos.length; i++) {//para que no se duplique
-    todoList.innerHTML += '<li>' + todos[i] + '</li>';//concatenando
-  }
+ //for(let i = 0; i < todos.length; i++) {//para que no se duplique
+    //todoList.innerHTML += '<li>' + todos[i] + '</li>';//concatenando
+  //}
   //AGREGANDO EL MAP PARA TENER EJEMPLO
   //const todosTemplate = todos.map(t =>{
     //return 'li' + t + '/li';
@@ -45,17 +45,22 @@ form.onsubmit = (e) => {  // reemplazamos con onsubmit
 
 //Para agregar un evento usa add.EventListener(type, listener), siendo type el tipo de evento como click y listener lo que queremos que pasé;
 
+//.parentNode transforma todo lo que llevas , tiene la capacidad de eliminar a sus hijos con .removeChild
+
 const todoText = todo.value;
 todo.value = '';
 todos.push(todoText);
 const todoList = document.getElementById('todo-list');
 const todosTemplate = todos.map(t => '<li> + t +</li>');
 todoList.innerHTML = todosTemplate.join('');
-const elementos = document.querySelectorAll('#todo-list')
+const elementos = document.querySelectorAll('#todo-list li')
 elementos.forEach((elemento, i) => {
-  elemento.addEventListener('click', () =>
-  console.log(elemento, i));
+  elemento.addEventListener('click', () => {
+  elemento.parentNode.removeChild(elemento)
+  todos.splice(i, 1)
+  console.log(todos, i);
   
+})
 })
 }
 }
