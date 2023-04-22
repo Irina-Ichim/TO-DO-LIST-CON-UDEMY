@@ -10,11 +10,15 @@ const render = () => {
         elemento.addEventListener('click', () =>{
         elemento.parentNode.removeChild(elemento)
         todos.splice(i, 1)
-        const todoStrings = JSON.stringify(todos)
-        localStorage.setItem(`todos`, todoStrings)
+        actualizaTodos(todos)
         render()
     })
 })
+}
+
+const actualizaTodos = (todos) => {                //Se repetian lo que tengo dentro de esta funcion en la funcion de arriba y la de abajo, para que no pase uso esto
+    const todoStrings = JSON.stringify(todos)
+    localStorage.setItem(`todos`, todoStrings)
 }
 
 window.onload = () => {
@@ -26,8 +30,7 @@ form.onsubmit = (e) => {
     const todoText = todo.value ;
     todo.value = '';
     todos.push(todoText);
-    const todoStrings = JSON.stringify(todos)
-    localStorage.setItem(`todos`, todoStrings)
+    actualizaTodos(todos)
     render()
 }
 }
@@ -38,3 +41,5 @@ form.onsubmit = (e) => {
 //localStorage.getItem('lala') Como buscar en localStorage
 
 //ShortCircuit
+
+//Me he quedado en Operador de propagación
