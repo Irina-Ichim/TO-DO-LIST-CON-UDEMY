@@ -1,5 +1,5 @@
-console.log('irina');
-const todos = [];
+
+const todos = JSON.parse(localStorage.getItem('todos')) || [];
 
 const render = () => {
     const todoList = document.getElementById('todo-list');
@@ -10,12 +10,15 @@ const render = () => {
         elemento.addEventListener('click', () =>{
         elemento.parentNode.removeChild(elemento)
         todos.splice(i, 1)
+        const todoStrings = JSON.stringify(todos)
+        localStorage.setItem(`todos`, todoStrings)
         render()
     })
 })
 }
 
 window.onload = () => {
+    render()
 const form= document.getElementById('todo-form');
 form.onsubmit = (e) => {
     e.preventDefault();
@@ -23,6 +26,9 @@ form.onsubmit = (e) => {
     const todoText = todo.value ;
     todo.value = '';
     todos.push(todoText);
+    const todoStrings = JSON.stringify(todos)
+    localStorage.setItem(`todos`, todoStrings)
+    render()
 }
 }
 
@@ -30,3 +36,5 @@ form.onsubmit = (e) => {
 //localStorage.setItem('lala', 'chanchito feliz') Guarda los elementos aunque cierras el ordenador
 
 //localStorage.getItem('lala') Como buscar en localStorage
+
+//ShortCircuit
