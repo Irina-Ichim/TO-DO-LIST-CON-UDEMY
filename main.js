@@ -64,7 +64,7 @@ elementos.forEach((elemento, i) => {
 })
 }
 }
-//LOCAL STORAGE SEUSA PARA GUARDAR DATOS AUNQUE HAS CERRADO EL ORDENADOR
+//LOCAL STORAGE SE USA PARA GUARDAR DATOS AUNQUE HAS CERRADO EL ORDENADOR
 localStorage.setItem('lala', 'chanchito feliz')
 //para ver lo que me devuelve 
 localStorage.getItem('lala')
