@@ -36,4 +36,3 @@ Si tienes sugerencias o mejoras para esta aplicación, siéntete libre de realiz
 
 ---
 
-Espero que te guste este nuevo `README.md`. Si tienes alguna otra idea para mejorarlo o si necesitas agregar más información, házmelo saber. ¡Disfruta del aprendizaje y de tus proyectos! 🚀
